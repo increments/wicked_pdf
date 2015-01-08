@@ -93,9 +93,7 @@ class WickedPdf
       end
 
       def precompiled_or_absolute_asset?(source)
-        Rails.configuration.assets.compile == false ||
-          source.to_s[0] == '/' ||
-          source.to_s.match(/\Ahttps?\:\/\//)
+        source.to_s[0] == '/' || source.to_s.match(/\Ahttps?\:\/\//)
       end
 
       def read_asset(source)
